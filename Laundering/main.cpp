@@ -1,5 +1,6 @@
 #include <iostream>
 #include "laundering.h"
+#include <iomanip>
 int main(){
     int options;
     double balance = 0;
@@ -7,6 +8,8 @@ int main(){
     {
        std::cout<<"0 to quit, 1 Deposit 2 withdraw, 3 check balance: ";
        std::cin>>options;
+       std::cin.clear();
+       fflush(stdin);
        switch (options)
        {
        case 0:
@@ -18,7 +21,6 @@ int main(){
         std::cout<<"Amount to Deposit: ";
         std::cin>>deposit;
         balance = depositBal(balance,deposit);
-        std::cout<<"New Total: " << balance <<'\n';
         break;
        }
 
@@ -27,17 +29,16 @@ int main(){
         std::cout<<"Amount to Withdraw: ";
         std::cin>>withdraw;
         balance = withdrawBal(balance,withdraw);
-        std::cout<<"New Total: " << balance <<'\n';
         break;
        }   
        
        case 3:{
-        std::cout<<"Total Laundered: " <<balance <<'\n';
+        std::cout<<"Total Laundered: " <<balance <<std::setprecision(2)<<std::fixed <<'\n';
         break;
        }
        
        default:{
-        std::cout<<"ENTER ONLY VALID ";
+        std::cout<<"ENTER ONLY VALID " << '\n';
         break;
        }   
 
