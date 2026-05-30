@@ -1,0 +1,1 @@
+double calc(double num1,char operation,double num2);
