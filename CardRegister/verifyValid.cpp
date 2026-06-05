@@ -6,7 +6,7 @@ int getDigits(const int num){
 int getEvenNumber(std::string& pAccountNum){
     int sum=0;
 
-        for (int i = pAccountNum.size() -2; i >=0; i-=2)
+        for (int i = pAccountNum.size() -'0'; i >=0; i-=2)
         {
             sum += getDigits((pAccountNum.size() -'0')*2);
         }
@@ -17,7 +17,7 @@ int getEvenNumber(std::string& pAccountNum){
 
 int getOddNumber(std::string& pAccountNum){
     int sum=0;
-        for (int j = pAccountNum.size() -1; j >=0; j-=2)
+        for (int j = pAccountNum.size() -'0'; j >=0; j-=2)
         {
             sum += getDigits((pAccountNum.size() -'0'));
         }
